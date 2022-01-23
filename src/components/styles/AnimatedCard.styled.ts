@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  width: 1000px;
-  max-width: 100%;
-  margin: 0 auto;
+  color: var(--primary-color-light);
 `;
 
 export const StyledCardHeader = styled.h2``;

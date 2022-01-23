@@ -9,7 +9,7 @@ import {
 interface Props {
   cardHeader: string;
   cardBody: string;
-  cardLink: any;
+  cardLink: string;
 }
 
 const AnimatedCard: React.FC<Props> = ({ cardHeader, cardBody, cardLink }) => {
@@ -17,7 +17,7 @@ const AnimatedCard: React.FC<Props> = ({ cardHeader, cardBody, cardLink }) => {
     <StyledCard>
       <StyledCardHeader>{cardHeader}</StyledCardHeader>
       <StyledCardBody>{cardBody}</StyledCardBody>
-      <StyledCardLink>{cardLink}</StyledCardLink>
+      <StyledCardLink href={cardLink}>Learn More</StyledCardLink>
     </StyledCard>
   );
 };
