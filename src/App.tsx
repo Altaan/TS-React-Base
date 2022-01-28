@@ -1,6 +1,6 @@
 import React from "react";
-import AnimatedCard from "./components/AnimatedCard";
 import GlobalStyle from "./components/styles/globalStyles";
+import AnimatedCard from "./components/AnimatedCard";
 
 function App() {
   return (

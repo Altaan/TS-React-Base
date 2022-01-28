@@ -1,6 +1,7 @@
 import React from "react";
 import {
   StyledCard,
+  StyledCardContent,
   StyledCardHeader,
   StyledCardBody,
   StyledCardLink,
@@ -10,14 +11,22 @@ interface Props {
   cardHeader: string;
   cardBody: string;
   cardLink: string;
+  imageLink?: string; // https link
 }
 
-const AnimatedCard: React.FC<Props> = ({ cardHeader, cardBody, cardLink }) => {
+const AnimatedCard: React.FC<Props> = ({
+  cardHeader,
+  cardBody,
+  cardLink,
+  imageLink,
+}) => {
   return (
-    <StyledCard>
-      <StyledCardHeader>{cardHeader}</StyledCardHeader>
-      <StyledCardBody>{cardBody}</StyledCardBody>
-      <StyledCardLink href={cardLink}>Learn More</StyledCardLink>
+    <StyledCard imageLink={imageLink}>
+      <StyledCardContent>
+        <StyledCardHeader>{cardHeader}</StyledCardHeader>
+        <StyledCardBody>{cardBody}</StyledCardBody>
+        <StyledCardLink href={cardLink}>Learn More</StyledCardLink>
+      </StyledCardContent>
     </StyledCard>
   );
 };
