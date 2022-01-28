@@ -7,8 +7,8 @@ function App() {
     <React.Fragment>
       <GlobalStyle />
       <AnimatedCard
-        cardHeader="Animated Card"
-        cardBody="Some description for the card"
+        cardHeader="Animated Card with looooooong header"
+        cardBody="Some description for the card and some more text to check how the description looks like with long text"
         cardLink="/take/me/somewhere"
       />
     </React.Fragment>

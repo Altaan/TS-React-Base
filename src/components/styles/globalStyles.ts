@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color-dark: hsl(205 20% 10%);
     --primary-color-light: hsl(0 0% 100%);
-    // --accent-color: hsl(140, 90%, 60%);
+    --accent-color: hsl(140 90% 60%);
   }
 
   *,

@@ -11,11 +11,13 @@ export const StyledCard = styled.div<StyledCardProps>`
     `url(${props.imageLink ? props.imageLink : defaultImage})`};
   background-size: cover;
   padding: 10rem 0 0;
-  max-width: 40ch;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
 `;
 
 export const StyledCardContent = styled.div`
-  padding: 1.5em;
+  padding: 1.5rem;
   background: linear-gradient(
     hsl(0 0% 0% / 0),
     hsl(0 0% 0% / 0.5) 10%,
@@ -23,8 +25,37 @@ export const StyledCardContent = styled.div`
   );
 `;
 
-export const StyledCardHeader = styled.h2``;
+export const StyledCardHeader = styled.h2`
+  position: relative;
 
-export const StyledCardBody = styled.p``;
+  &:after {
+    content: "";
+    background: var(--accent-color);
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+`;
 
-export const StyledCardLink = styled.a``;
+export const StyledCardBody = styled.p`
+  margin-top: 0.6rem;
+  color: rgb(255 255 255 / 0.8);
+`;
+
+export const StyledCardLink = styled.a`
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color-dark);
+  background-color: var(--accent-color);
+  padding: 0.4em 1em;
+  margin-top: 0.6rem;
+  border-radius: 0.25rem;
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-color-light);
+  }
+`;
