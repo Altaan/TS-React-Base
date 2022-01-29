@@ -29,32 +29,35 @@ export const StyledCardContent = styled.div`
     hsl(0 0% 0% / 0.5) 10%,
     hsl(0 0% 0% / 1)
   );
-  transform: translateY(60%);
-  transition: transform 500ms ease;
 
-  ${StyledCard}:hover & {
-    transform: translateY(0);
-    transition-delay: 500ms;
-  }
+  @media (hover) {
+    transform: translateY(60%);
+    transition: transform 500ms ease;
 
-  ${StyledCard}:focus-within &:focus-within {
-    transform: translateY(0);
-    transition-duration: 0ms;
-  }
+    ${StyledCard}:hover & {
+      transform: translateY(0);
+      transition-delay: 500ms;
+    }
 
-  & > *:not(:first-child) {
-    opacity: 0;
-    transition: opacity 500ms linear;
-  }
+    ${StyledCard}:focus-within &:focus-within {
+      transform: translateY(0);
+      transition-duration: 0ms;
+    }
 
-  ${StyledCard}:hover & > *:not(:first-child) {
-    opacity: 1;
-    transition-delay: 1000ms;
-  }
+    & > *:not(:first-child) {
+      opacity: 0;
+      transition: opacity 500ms linear;
+    }
 
-  ${StyledCard}:focus-within & > *:not(:first-child) {
-    opacity: 1;
-    transition-delay: 500ms;
+    ${StyledCard}:hover & > *:not(:first-child) {
+      opacity: 1;
+      transition-delay: 1000ms;
+    }
+
+    ${StyledCard}:focus-within & > *:not(:first-child) {
+      opacity: 1;
+      transition-delay: 500ms;
+    }
   }
 `;
 
@@ -69,9 +72,12 @@ export const StyledCardHeader = styled.h2`
     width: 100%;
     bottom: -2px;
     left: 0;
-    transform: scaleX(0);
     transform-origin: left;
     transition: transform 500ms ease;
+
+    @media (hover) {
+      transform: scaleX(0);
+    }
   }
 
   ${StyledCard}:hover &:after,
