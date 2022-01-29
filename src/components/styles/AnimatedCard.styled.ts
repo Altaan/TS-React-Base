@@ -7,8 +7,8 @@ interface StyledCardProps {
 
 export const StyledCard = styled.div<StyledCardProps>`
   color: var(--primary-color-light);
-  background-image: ${(props) =>
-    `url(${props.imageLink ? props.imageLink : defaultImage})`};
+  background-image: ${({ imageLink }) =>
+    `url(${imageLink ? imageLink : defaultImage})`};
   background-size: contain;
   padding: 10rem 0 0;
   max-width: 35ch;
@@ -21,12 +21,36 @@ export const StyledCard = styled.div<StyledCardProps>`
   }
 `;
 
+export const StyledCardContent = styled.div`
+  padding: 1.5rem;
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 0.5) 10%,
+    hsl(0 0% 0% / 1)
+  );
+  transform: translateY(65%);
+  transition: transform 500ms ease;
+
+  & > *:not(:first-child) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
+  ${StyledCard}:hover & {
+    transform: translateY(0);
+  }
+
+  ${StyledCard}:hover & > *:not(:first-child) {
+    opacity: 1;
+  }
+`;
+
 export const StyledCardHeader = styled.h2`
   position: relative;
 
   &:after {
     content: "";
-    background: var(--accent-color);
+    background: var(--light-green-color);
     position: absolute;
     height: 3px;
     width: 100%;
@@ -42,32 +66,8 @@ export const StyledCardHeader = styled.h2`
   }
 `;
 
-export const StyledCardContent = styled.div`
-  padding: 1.5rem;
-  background: linear-gradient(
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 0.5) 10%,
-    hsl(0 0% 0% / 1)
-  );
-  transform: translateY(75%);
-  transition: transform 500ms ease;
-
-  & > *:not(${StyledCardHeader}) {
-    opacity: 0;
-    transition: opacity 500ms linear;
-  }
-
-  ${StyledCard}:hover & {
-    transform: translateY(0);
-  }
-
-  ${StyledCard}:hover & > *:not(${StyledCardHeader}) {
-    opacity: 1;
-  }
-`;
-
 export const StyledCardBody = styled.p`
-  margin-top: 0.6rem;
+  margin-top: 1rem;
   color: rgb(255 255 255 / 0.8);
 `;
 
@@ -76,8 +76,8 @@ export const StyledCardLink = styled.a`
   display: inline-block;
   text-decoration: none;
   color: var(--primary-color-dark);
-  background-color: var(--accent-color);
-  padding: 0.4em 1em;
+  background-color: var(--light-green-color);
+  padding: 0.5rem 1rem;
   margin-top: 0.6rem;
   border-radius: 0.25rem;
 
