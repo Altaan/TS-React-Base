@@ -28,20 +28,22 @@ export const StyledCardContent = styled.div`
     hsl(0 0% 0% / 0.5) 10%,
     hsl(0 0% 0% / 1)
   );
-  transform: translateY(65%);
+  transform: translateY(60%);
   transition: transform 500ms ease;
+
+  ${StyledCard}:hover & {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
 
   & > *:not(:first-child) {
     opacity: 0;
     transition: opacity 500ms linear;
   }
 
-  ${StyledCard}:hover & {
-    transform: translateY(0);
-  }
-
   ${StyledCard}:hover & > *:not(:first-child) {
     opacity: 1;
+    transition-delay: 1000ms;
   }
 `;
 
