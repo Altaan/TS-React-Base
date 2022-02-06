@@ -66,7 +66,7 @@ export const StyledCardHeader = styled.h2`
 
   &:after {
     content: "";
-    background: var(--light-green-color);
+    background: var(--color-light-green);
     position: absolute;
     height: 3px;
     width: 100%;
@@ -96,7 +96,7 @@ export const StyledCardLink = styled.a`
   display: inline-block;
   text-decoration: none;
   color: var(--primary-color-dark);
-  background-color: var(--light-green-color);
+  background-color: var(--color-light-green);
   padding: 0.5rem 1rem;
   margin-top: 0.6rem;
   border-radius: 0.25rem;

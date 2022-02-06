@@ -13,16 +13,15 @@ export const StyledLoadingIndicator = styled.div`
   }
 
   & span {
-    background-color: hsl(0 100% 50%);
-    margin: 0.25rem;
     width: 2rem;
     height: 2rem;
+    margin: 0.25rem;
     animation: scale 1s linear infinite;
   }
 
   @keyframes scale {
     50% {
-      transform: scale(1.2);
+      transform: scale(1.25);
     }
   }
 

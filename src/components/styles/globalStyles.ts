@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color-dark: hsl(205 20% 10%);
     --primary-color-light: hsl(0 0% 100%);
-    --light-green-color: hsl(140 90% 60%);
+    --color-light-green: hsl(140 90% 60%);
   }
 
   *,
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     place-items: center;
     line-height: 1.6;
-    background: var(--primary-color-dark);
+    background: var(--primary-color-light);
   }
 `;
 
