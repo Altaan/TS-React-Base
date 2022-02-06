@@ -1,4 +1,5 @@
 import React from "react";
+import { MdSearch } from "react-icons/md";
 import {
   StyledSearchBar,
   StyledSearchBarIcon,
@@ -9,7 +10,9 @@ const SearchBar: React.FC = () => {
   return (
     <StyledSearchBar>
       <StyledSearchBarInput type="text" placeholder="Type to search" />
-      <StyledSearchBarIcon></StyledSearchBarIcon>
+      <StyledSearchBarIcon href="#">
+        <MdSearch color="black" />
+      </StyledSearchBarIcon>
     </StyledSearchBar>
   );
 };
