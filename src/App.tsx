@@ -7,6 +7,7 @@ function App() {
     <React.Fragment>
       <GlobalStyle />
       <LoadingIndicator />
+      <p>testing</p>
     </React.Fragment>
   );
 }
