@@ -1,13 +1,12 @@
 import React from "react";
 import GlobalStyle from "./components/styles/globalStyles";
-import LoadingIndicator from "./components/LoadingIndicator";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <LoadingIndicator />
-      <p>testing</p>
+      <SearchBar onClickSearch={() => alert("Searching...")} searchEnterPress />
     </React.Fragment>
   );
 }
