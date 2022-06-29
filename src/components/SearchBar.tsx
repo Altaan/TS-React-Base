@@ -2,16 +2,21 @@ import React from "react";
 import { MdSearch } from "react-icons/md";
 import {
   StyledSearchBar,
-  StyledSearchBarIcon,
   StyledSearchBarInput,
+  StyledSearchBarIcon,
 } from "./styles/SearchBar.styled";
 
 interface Props {
   onClickSearch: () => void;
-  searchEnterPress?: boolean;
+  searchOnEnterPress?: boolean;
+  darkBackground?: boolean;
 }
 
-const SearchBar: React.FC<Props> = ({ onClickSearch, searchEnterPress }) => {
+const SearchBar: React.FC<Props> = ({
+  onClickSearch,
+  searchOnEnterPress,
+  darkBackground,
+}) => {
   const handleSubmit = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -20,20 +25,21 @@ const SearchBar: React.FC<Props> = ({ onClickSearch, searchEnterPress }) => {
   };
 
   const handleKeypress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter" && searchEnterPress) {
+    if (event.key === "Enter" && searchOnEnterPress) {
       onClickSearch();
     }
   };
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBar darkBackground={darkBackground}>
       <StyledSearchBarInput
         type="text"
         placeholder="Type to search"
         onKeyPress={(e) => handleKeypress(e)}
+        darkBackground={darkBackground}
       />
       <StyledSearchBarIcon href="#" onClick={(e) => handleSubmit(e)}>
-        <MdSearch color="black" />
+        <MdSearch color={darkBackground ? "white" : "black"} />
       </StyledSearchBarIcon>
     </StyledSearchBar>
   );

@@ -6,7 +6,11 @@ function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <SearchBar onClickSearch={() => alert("Searching...")} searchEnterPress />
+      <SearchBar
+        onClickSearch={() => alert("Searching...")}
+        searchOnEnterPress
+        darkBackground
+      />
     </React.Fragment>
   );
 }
