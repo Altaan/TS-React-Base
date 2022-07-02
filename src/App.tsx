@@ -9,7 +9,7 @@ function App() {
       <SearchBar
         onClickSearch={() => alert("Searching...")}
         searchOnEnterPress
-        darkBackground
+        darkMode
       />
     </React.Fragment>
   );

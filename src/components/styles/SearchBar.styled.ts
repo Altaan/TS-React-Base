@@ -6,9 +6,14 @@ interface StyledSearchBarProps {
 
 export const StyledSearchBar = styled.div<StyledSearchBarProps>`
   background: ${({ darkBackground }) =>
-    darkBackground ? `hsl(250 20% 20%)` : `hsl(0 0% 90%)`};
+    darkBackground ? `hsl(250 10% 18%)` : `hsl(0 0% 85%)`};
   height: 40px;
   border-radius: 40px;
+
+  &:focus-within {
+    background: ${({ darkBackground }) =>
+      darkBackground ? `hsl(250 10% 25%)` : `hsl(0 0% 92%)`};
+  }
 `;
 
 export const StyledSearchBarInput = styled.input<StyledSearchBarProps>`
@@ -30,4 +35,8 @@ export const StyledSearchBarIcon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
+  &:focus-within {
+    outline: none;
+  }
 `;
