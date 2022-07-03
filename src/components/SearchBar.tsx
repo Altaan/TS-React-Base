@@ -18,16 +18,18 @@ const SearchBar: React.FC<Props> = ({
   darkMode,
 }) => {
   return (
-    <StyledSearchBar darkBackground={darkMode}>
+    <StyledSearchBar darkMode={darkMode}>
       <StyledSearchBarInput
         type="text"
-        placeholder="Type to search"
+        placeholder="Search..."
         onKeyPress={(e) => handleKeypress(e, searchOnEnterPress, onClickSearch)}
-        darkBackground={darkMode}
+        darkMode={darkMode}
       />
       <StyledSearchBarIcon
         href="#"
         onClick={(e) => handleSubmit(e, onClickSearch)}
+        data-tooltip="Search"
+        darkMode={darkMode}
       >
         <MdSearch color={darkMode ? "white" : "black"} />
       </StyledSearchBarIcon>
