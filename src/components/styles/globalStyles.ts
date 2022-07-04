@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-color-dark: hsl(205 20% 10%);
     --primary-color-light: hsl(0 0% 100%);
     --color-light-green: hsl(140 90% 60%);
+    --color-light-orange: hsl(30, 100%, 50%, 75%)
   }
 
   *,
@@ -16,10 +17,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    display: grid;
+    /* display: grid;
     min-height: 100vh;
     place-items: center;
-    line-height: 1.6;
+    line-height: 1.6; */
     background: var(--primary-color-light);
   }
 `;
