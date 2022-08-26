@@ -21,6 +21,47 @@ export const StyledNav = styled.nav`
   width: 100%;
 `;
 
+export const StyledMenuBtn = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid black;
+  cursor: pointer;
+`;
+
+export const StyledMenuBurgerBtn = styled.div`
+  background: white;
+  width: 1.5rem;
+  height: 0.25rem;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 1.5rem;
+    height: 0.25rem;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::before {
+    transform: translateY(-8px);
+  }
+
+  &::after {
+    transform: translateY(8px);
+  }
+`;
+
 export const StyledList = styled.ul`
   margin: 0;
   padding: 0;

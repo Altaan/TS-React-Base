@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledAnchor,
   StyledHeader,
   StyledList,
   StyledListItem,
   StyledLogo,
+  StyledMenuBtn,
+  StyledMenuBurgerBtn,
   StyledNav,
 } from "./styles/NavigationBar.styled";
 
@@ -19,10 +21,15 @@ interface Props {
 }
 
 const NavigationBar: React.FC<Props> = ({ items, logoLink }) => {
+  const [isMenuBtnOpen, setIsMenuBtnOpen] = useState(false);
+
   return (
     <StyledHeader>
       <StyledLogo>{logoLink}</StyledLogo>
 
+      <StyledMenuBtn>
+        <StyledMenuBurgerBtn />
+      </StyledMenuBtn>
       <StyledNav>
         <StyledList>
           {items.map((navItem, index) => (
